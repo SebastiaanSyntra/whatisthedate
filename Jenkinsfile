@@ -10,5 +10,15 @@ pipeline {
                 sh 'mvn verify'
             }
         }
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                deploy adapters: [tomcat9(url: 'http://localhost:1111/', credentialsId: 'ea3d3e64-dd53-4f43-b5a3-4161de5b2588')],
+                                            war: 'target/*.war',
+                                    contextPath: 'whatisthedate'
+            }
+        }
     }
 }
