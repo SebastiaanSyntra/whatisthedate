@@ -21,12 +21,12 @@ pipeline {
                 rtMavenRun (
                     tool: 'Maven 3.6.3',
                     pom: 'pom.xml',
-                    goals: 'clean verify',
+                    goals: 'clean package',
                     resolverId: 'resolver'
                 )
             }
         }
-        stage('Build, Test, Publish') {
+        stage('Build, Test, Snapshot') {
             when {
                 branch 'main'
             }
@@ -60,6 +60,17 @@ pipeline {
                 deploy adapters: [tomcat9(url: 'http://localhost:1111/', credentialsId: 'ea3d3e64-dd53-4f43-b5a3-4161de5b2588')],
                                             war: 'target/*.war',
                                     contextPath: 'whatisthedate'
+            }
+        }
+        stage('Build info') {
+            when {
+                branch 'main'
+            }
+            steps {
+                 rtPublishBuildInfo (
+                      serverId: 'artifactory',
+                      buildName: 'whatisthedate',
+                 )
             }
         }
     }
