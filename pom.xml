@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -12,7 +10,7 @@
 
 	<groupId>com.realdolmen.devops</groupId>
 	<artifactId>whatisthedate</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -49,7 +47,7 @@
 	<scm>
 		<connection>scm:git:git@gitlab.com:tom-rd/whatisthedate.git</connection>
 		<developerConnection>scm:git:git@gitlab.com:tom-rd/whatisthedate.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>whatisthedate-1.0</tag>
 		<url>git@gitlab.com/tom-rd/whatisthedate.git</url>
 	</scm>
 </project>
