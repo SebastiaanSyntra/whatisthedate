@@ -47,8 +47,8 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git@gitlab.com:tom-rd/whatisthedate</connection>
-		<developerConnection>scm:git:git@gitlab.com:tom-rd/whatisthedate</developerConnection>
+		<connection>scm:git:git@gitlab.com:tom-rd/whatisthedate.git</connection>
+		<developerConnection>scm:git:git@gitlab.com:tom-rd/whatisthedate.git</developerConnection>
 		<tag>HEAD</tag>
 		<url>git@gitlab.com/tom-rd/whatisthedate.git</url>
 	</scm>
