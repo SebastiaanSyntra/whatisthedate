@@ -12,18 +12,7 @@ pipeline {
                 }
             }
             steps {
-                rtMavenResolver (
-                    id: 'resolver',
-                    serverId: 'artifactory',
-                    releaseRepo: 'maven-libs-release',
-                    snapshotRepo: 'maven-libs-snapshot'
-                )
-                rtMavenRun (
-                    tool: 'Maven 3.6.3',
-                    pom: 'pom.xml',
-                    goals: 'clean package',
-                    resolverId: 'resolver'
-                )
+                sh('mvn clean package')
             }
         }
         stage('Build, Test, Snapshot') {
@@ -37,17 +26,10 @@ pipeline {
                     releaseRepo: 'maven-libs-release-local',
                     snapshotRepo: 'maven-libs-snapshot-local',
                 )
-                rtMavenResolver (
-                    id: 'resolver',
-                    serverId: 'artifactory',
-                    releaseRepo: 'maven-libs-release',
-                    snapshotRepo: 'maven-libs-snapshot'
-                )
                 rtMavenRun (
                     tool: 'Maven 3.6.3',
                     pom: 'pom.xml',
                     goals: 'clean install',
-                    resolverId: 'resolver',
                     deployerId: 'deployer',
                 )
             }
@@ -60,17 +42,6 @@ pipeline {
                 deploy adapters: [tomcat9(url: 'http://localhost:1111/', credentialsId: 'ea3d3e64-dd53-4f43-b5a3-4161de5b2588')],
                                             war: 'target/*.war',
                                     contextPath: 'whatisthedate'
-            }
-        }
-        stage('Build info') {
-            when {
-                branch 'main'
-            }
-            steps {
-                 rtPublishBuildInfo (
-                      serverId: 'artifactory',
-                      buildName: 'whatisthedate',
-                 )
             }
         }
     }
