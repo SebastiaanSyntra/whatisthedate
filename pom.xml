@@ -10,7 +10,7 @@
 
 	<groupId>com.realdolmen.devops</groupId>
 	<artifactId>whatisthedate</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -48,5 +48,6 @@
 		<connection>scm:git:ssh://git@gitlab.com/tom-rd/whatisthedate.git</connection>
 		<developerConnection>scm:git:ssh://git@gitlab.com/tom-rd/whatisthedate.git</developerConnection>
 		<url>git@gitlab.com/tom-rd/whatisthedate.git</url>
-	</scm>
+	  <tag>1.0</tag>
+  </scm>
 </project>
