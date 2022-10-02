@@ -23,8 +23,8 @@ pipeline {
                 rtMavenDeployer (
                     id: 'deployer',
                     serverId: 'artifactory',
-                    releaseRepo: 'maven-libs-release-local',
-                    snapshotRepo: 'maven-libs-snapshot-local',
+                    releaseRepo: 'devops-libs-release-local',
+                    snapshotRepo: 'devops-libs-snapshot-local',
                 )
                 rtMavenRun (
                     tool: 'Maven 3.6.3',

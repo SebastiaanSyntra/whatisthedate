@@ -57,8 +57,8 @@
 	<distributionManagement>
 		<repository>
 			<id>central</id>
-			<name>I0249769-releases</name>
-			<url>http://localhost:8081/artifactory/maven-libs-release</url>
+			<name>a0o584agfcdnc-artifactory-primary-0-releases</name>
+			<url>https://artifactorydevops123.jfrog.io/artifactory/devops-libs-release</url>
 		</repository>
 	</distributionManagement>
 </project>
