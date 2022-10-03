@@ -1,14 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    tools{
-        maven 'Maven 3.8.3'
-        jdk 'jdk11'
-    }
+
     stages {
-        stage('Build and Test'){
-            steps{
-                echo 'mvn verify'
-                }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
+}
