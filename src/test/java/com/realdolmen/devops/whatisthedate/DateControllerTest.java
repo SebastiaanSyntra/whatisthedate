@@ -24,7 +24,7 @@ class DateControllerTest {
     @InjectMocks
     private DateController dateController;
     
-    @Test
+
     void givenClockHasTime_whenCallController_thenReturnUtcTimeAsText() {
         Instant fakeInstant = LocalDate.parse("2022-08-02")
                 .atStartOfDay()

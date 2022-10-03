@@ -17,7 +17,7 @@ public class DateControllerIntegrationTest {
     @Autowired
     private TestRestTemplate restTemplate;
     
-    @Test
+
     public void whenCallGetDate_thenGetDate() {
         ResponseEntity<String> response = restTemplate.getForEntity("/date", String.class);
         
