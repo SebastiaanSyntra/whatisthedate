@@ -17,9 +17,9 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 bat 'mvn install'
-                deploy adapters: [tomcat9(path: '', url: 'http://localhost:8080/')],
-                contextPath: 'whatisthedatum',
-                war: 'target/*.war'
+                deploy adapters: [tomcat9(credentialsId: '7e951a9d-65e1-4214-a691-539e3e21c6e0', path: '',
+                url: 'http://localhost:8080/')],
+                contextPath: 'whatisthedatum', war: 'target/*.war'
 
             }
         }
