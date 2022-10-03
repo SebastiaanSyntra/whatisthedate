@@ -1,20 +1,23 @@
 pipeline {
     agent any
+    tools{
+        maven 'Maven 3.8.6'
+        jdk 'jdk8'}
 
     stages {
         stage('Build') {
             steps {
-                sh 'Building..'
+                echo 'Building..'
+                bat 'mvn build'
+
             }
         }
-        stage('Test') {
-            steps {
-                sh 'Testing..'
-            }
-        }
+
         stage('Deploy') {
             steps {
-                sh 'Deploying....'
+                echo 'Deploying....'
+                bat 'mvn install'
+
             }
         }
     }
